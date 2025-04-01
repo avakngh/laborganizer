@@ -33,6 +33,12 @@ def remove_member():
 def skip_week():
     st.session_state.members['Num'] = (st.session_state.members['Num'] + 1) % len(st.session_state.members)
 
+def swap_members():
+    '''
+    Swap member duties between weeks given input "Name, Name"'''
+    # name1 = st.session_state.swap_member
+    return
+
 # Add Member Section
 add_name = st.text_input('Add New Lab Member (name and first initial)', key="add_name")
 st.button('Add Member', on_click=add_member)
@@ -43,5 +49,9 @@ st.text('Make sure to watch your spelling or it will raise an error!')
 st.button('Remove Member', on_click=remove_member)
 
 # Skip Member Section
-skip_member = st.text_input('Choose who to skip for weekly lab duties if lab member is unavailable:', key="skip_member")
-st.button('Skip Member', on_click=skip_week)
+skip_member = st.text_input('Skip a week for lab duties if lab member is unavailable:', key="skip_week")
+st.button('Skip Week', on_click=skip_week)
+
+# Swap lab member duties between weeks (IN PROGRESS)
+swap_member = st.text_input('Choose members to swap duties/weeks with by listing their names with a comma in between:', key="swap_member")
+st.button('Swap Members', on_click=swap_members)
