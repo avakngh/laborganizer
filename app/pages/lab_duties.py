@@ -6,27 +6,7 @@ import pandas as pd
 
 SideBarLinks()
 
-# st.title('Lab Duties')
-# st.write('Add or remove lab duties')
 
-# add_duty = st.text_input('Add New Lab Duty')
-# submit_button1 = st.button('Add Duty')
-
-# # remove inactive lab member
-# remove_duty = st.text_input('Remove Lab Duty')
-# submit_button2 = st.button('Remove Duty')
-
-# if submit_button1: 
-#     duties.loc[len(duties)] = [add_duty]
-#     # add break in between to break up numbers
-#     if len(duties) < len(members):
-#         duties.loc[len(duties)] = ['Break']
-#     elif len(duties) > len(members):
-#         members.loc[len(members)] = ['Space']
-
-# if submit_button2:
-#     duties.drop(duties[duties['duties'] == remove_duty].index, inplace = True)
-#     duties.reset_index()
 
 
 # Initialize session state for duties if not already set
@@ -44,7 +24,7 @@ add_duty = st.text_input('Add New Lab Duty')
 submit_button1 = st.button('Add Duty')
 
 # Text input for removing a duty
-remove_duty = st.text_input('Remove Lab Duty')
+remove_duty = st.selectbox('Remove Lab Duty', options=st.session_state.duties['duties'])
 submit_button2 = st.button('Remove Duty')
 
 # Handle adding a duty

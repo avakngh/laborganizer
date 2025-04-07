@@ -35,11 +35,23 @@ def skip_week():
 
 def swap_members():
     '''
-    Swap member duties between weeks given input "Name, Name"'''
+    Swap member duties between weeks given input "Name, Name"
+    '''
     name1 = st.session_state.swap_member1
-    name2 = st.session_state.swamp_member2
-    #swap values
-    st.session_state.members[[name1, 'Num']] = st.session_state.members[[name2, 'Num']]
+    name2 = st.session_state.swap_member2
+
+    members_df = st.session_state.members
+
+    try:
+        num1 = members_df.loc[members_df['Member'] == name1, 'Num'].values[0]
+        num2 = members_df.loc[members_df['Member'] == name2, 'Num'].values[0]
+    except IndexError:
+        st.error("One or both member names are incorrect. Please check spelling and try again.")
+        return
+
+    st.session_state.members.loc[members_df['Member'] == name1, 'Num'] = num2
+    st.session_state.members.loc[members_df['Member'] == name2, 'Num'] = num1
+
 
 
 # Add Member Section
@@ -55,6 +67,6 @@ skip_member = st.selectbox(label = 'Skip a week for lab duties if lab member is 
 st.button('Skip Week', on_click=skip_week)
 
 # Swap lab member duties between weeks (IN PROGRESS)
-swap_member1 = st.selectbox(label = 'Choose members to swap duties/weeks with', key="swap_member")
-swap_member2 = st.selectbox('Choose members to swap duties/weeks with', key="swap_member")
+swap_member1 = st.selectbox(label = 'Choose members to swap duties/weeks with', options = st.session_state.members['Member'], key="swap_member1")
+swap_member2 = st.selectbox('Choose members to swap duties/weeks with', options = st.session_state.members['Member'], key="swap_member2")
 st.button('Swap Members', on_click=swap_members)

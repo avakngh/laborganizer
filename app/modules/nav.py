@@ -10,6 +10,7 @@ def SideBarLinks(show_home=True):
     st.sidebar.page_link('pages/get_duties.py', label="Generate Duties", icon="🔬")
     st.sidebar.page_link('pages/lab_members.py', label="Lab Members", icon="🧑‍🔬")
     st.sidebar.page_link('pages/lab_duties.py', label="Lab Duties", icon="🧪")
+    st.sidebar.page_link('pages/projects.py', label='Projects', icon='🔮')
 
 
 
