@@ -78,32 +78,32 @@ view_duties = st.button("Weekly Lab Duties",
              type='secondary',
              use_container_width=True)
 if view_duties:
-    st.switch_page('pages/get_duties.py')
+    st.switch_page('pgs/get_duties.py')
 
 members = st.button("View/Edit Lab Members",
              type='secondary',
              use_container_width=True)
 if members:
-    login('pages/lab_members.py')
+    login('pgs/lab_members.py')
 
 edit_duties = st.button("View/Edit Lab Duties",
              type='secondary',
              use_container_width=True)
 if edit_duties:
-    login('pages/lab_duties.py')
+    login('pgs/lab_duties.py')
 
 projects = st.button('View Projects and Calendar',
                      type = 'secondary',
                      use_container_width=True)
 if projects:
-    st.switch_page('pages/projects.py')
+    st.switch_page('pgs/projects.py')
 
 edit_cal = st.button('Edit Calendar Events',
                      type = 'secondary',
                      use_container_width=True)
 
 if edit_cal:
-    login('pages/edit_calendar.py')
+    login('pgs/edit_calendar.py')
 
 st.image('https://previews.dropbox.com/p/thumb/ACpeWPAJlTTspz2sDw5ksFqF-cfxgorzMH1cGMY2W6rVBSdGmr1skoDYr8bLn-I5wZyDeDlkjuEEWbsZIlxVAnhV3Ep8aPwjy-0kGUiQvF5UptWMJ8vx7KBzFch6LNTGdyRGKpkfKuzRLZythP7wNgUVsO1uzC-AyPQZHEuLDLk40bjVf5Awm1LktJC2ln9KZrZvNiAVNoKcmKFtEAbU78f6JYfsIAWgKIBuEEzmMm_lC6FHrMfjuWwGSdc48V5d5SW9kTE-Lryt0i1B4-364lbXVLAROb9YKiWWU0xYMKzycTDb13GenpIKgFtSAbvySEIvmaBiakpTrHbf3Ohj1tQIryhKgTtaK42DC2c8vKTM0jBK4vgCm7fPYOa4EmeCSRQo1WQkQxjkc16m4AxD7yu1UYGO4jHYOWFhmWqz8O2jKRnCcxOJcH4hl2Fmi_Nc3BwGs_zFzxWhIlGL2iQDwS52/p.jpeg',
          use_container_width=True)
