@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import streamlit as st
 
+st.set_page_config(layout='wide')
 
 st.markdown("""
     <style>
@@ -14,7 +15,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.set_page_config(layout='wide')
+
 
 unauthSideBar()
 
