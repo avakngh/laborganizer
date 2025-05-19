@@ -1,8 +1,8 @@
 # about
 import streamlit as st
-from modules.nav import SideBarLinks
+from modules.nav import unauthSideBar
 
-SideBarLinks()
+unauthSideBar()
 
 
 st.markdown(
