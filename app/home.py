@@ -6,6 +6,13 @@ from pathlib import Path
 import streamlit as st
 
 
+st.markdown("""
+    <style>
+    section[data-testid="stSidebarNav"] {
+        display: none;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 st.set_page_config(layout='wide')
 
