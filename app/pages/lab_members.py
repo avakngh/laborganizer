@@ -32,6 +32,7 @@ def remove_member():
 
 def skip_week():
     st.session_state.members['Num'] = (st.session_state.members['Num'] + 1) % len(st.session_state.members)
+    st.warning('Success!')
 
 def swap_members():
     '''
@@ -51,6 +52,7 @@ def swap_members():
 
     st.session_state.members.loc[members_df['Member'] == name1, 'Num'] = num2
     st.session_state.members.loc[members_df['Member'] == name2, 'Num'] = num1
+    st.warning('Success!')
 
 
 
