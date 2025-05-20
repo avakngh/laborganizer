@@ -25,6 +25,14 @@ if EVENTS_FILE.exists():
 else:
     saved_events = []
 
+# Ensure all events have 'end' and 'title'
+for e in saved_events:
+    if "end" not in e:
+        e["end"] = e["start"]  # fallback
+    if "title" not in e:
+        e["title"] = "(Untitled)"
+
+
 # Initialize Streamlit page
 st.title("Edit Events")
 
@@ -40,8 +48,9 @@ event = saved_events[selected_index]
 # Editable fields
 new_title = st.text_input("Change Event Title", value=event["title"])
 new_start = st.date_input("Change Start Date", value=datetime.strptime(event["start"], "%Y-%m-%d").date())
-new_end = st.date_input("Change End Date", value=datetime.strptime(event["end"], "%Y-%m-%d").date())
-location = st.selectbox("Change Location", options=list(color_map.keys()))
+default_end = event.get("end", event["start"])  # fallback to start date if end is missing
+new_end = st.date_input("Change End Date", value=datetime.strptime(default_end, "%Y-%m-%d").date())
+location = st.selectbox("Change Location/Meeting", options=list(color_map.keys()))
 new_color = color_map[location]
 
 # Submit changes
