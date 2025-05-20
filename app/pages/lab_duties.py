@@ -6,9 +6,6 @@ import pandas as pd
 
 SideBarLinks()
 
-
-
-
 # Initialize session state for duties if not already set
 if 'duties' not in st.session_state:
     st.session_state.duties = duties

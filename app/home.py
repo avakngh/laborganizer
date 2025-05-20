@@ -1,6 +1,5 @@
 # password protection page
 import streamlit as st
-from app import home
 from modules.nav import unauthSideBar
 import json
 from pathlib import Path
